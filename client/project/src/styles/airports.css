@@ -1,0 +1,9 @@
+.card.airport {
+    width: 30%;
+    margin: 1%;
+  }
+  
+.card.airport a {
+margin-top: 10px;
+width: 100%;
+}  

@@ -1,0 +1,13 @@
+.user-row {
+    display: grid;
+    grid-template-columns: 200px 100px;
+}
+
+.user-flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+h1.user-header {
+    margin-bottom: 30px;
+}

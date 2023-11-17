@@ -1,0 +1,1 @@
+export type TNavigationItem = [url: string, title: string];

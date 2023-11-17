@@ -1,0 +1,60 @@
+.flights-box {
+background-color : black;
+border-radius: 10px;
+font-weight: 500;
+}
+
+.flights-box .flights-row {
+display: inline-flex;
+width: 100%;
+background-color: black;
+color: white;
+padding-left: 50px;
+}
+
+.flights-box .flights-row.header {
+background-color: yellow;
+color: black;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.flights-box .flights-row.data {
+background-color: black;
+color: white;
+}
+
+.flights-box .flights-row a, .flights-box hr {
+color: white;
+}
+
+.flights-box .button {
+color: yellow;
+display: inline-block;
+background-color: black;
+margin-bottom: 10px;
+padding: 5px;
+outline: yellow 1px solid;
+border-radius: 0 0 7px 7px;
+}
+.flights-box .button:hover {
+cursor: pointer;
+color: black;
+background-color: yellow;
+}
+
+.flight-box-header {
+display: inline-flex;
+width: 100%;
+}
+
+.flight-box-header .header {
+width: 70%;
+color: yellow;
+padding: 10px 0 10px 50px;
+}
+.flight-box-header .time {
+width: 30%;
+color: white;
+padding: 10px 50px 0 0;
+}

@@ -1,0 +1,65 @@
+.user-flight-card {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    border-bottom: 1px solid black;
+    padding: 10px 0 10px 0;
+}
+
+.user-flights-header {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.user-flight-link {
+    margin-right: 10px;
+}
+
+.user-notification-form {
+    padding: 10px;
+    width: fit-content;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.089);
+}
+
+.user-notification-form input, .user-notification-form button, .user-notification-form select {
+    margin: 3px;
+    height:35px;
+}
+
+.user-notification-form input {
+    width: 50px;
+}
+
+.user-notification-box button {
+    border-radius: 5px;
+    width: 35px;
+    border: 0;
+    color: white;
+    font-weight: 900;
+    font-size: 22px;
+}
+
+.user-notification-box button.add{
+    background-color: rgb(27, 180, 40);
+}
+
+.user-notification-box button.delete{
+    background-color: rgb(224, 19, 19);
+}
+
+.user-notification-box {
+    display: grid;
+    justify-content: center;
+    text-align: left;
+}
+
+.user-notification-box .user-notification-card {
+    display: inline-flex;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.user-notification-box .user-notification-card div {
+    width: calc(100% - 50px);
+}

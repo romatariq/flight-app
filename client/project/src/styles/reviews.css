@@ -1,0 +1,31 @@
+.fa-star.checked {
+    color: orange;
+}
+
+.fa-star.user-rating{
+    cursor: pointer;
+}
+
+.review-box {
+    width: 70ch;
+    max-width: 100%;
+    background-color: lightgray;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 8px;
+}
+
+.review-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button.user-feedback.selected-positive {
+    background-color: lightblue;
+}
+
+button.user-feedback.selected-negative {
+    background-color: lightpink;
+}
