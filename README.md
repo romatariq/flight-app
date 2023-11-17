@@ -34,7 +34,7 @@ Flight details page can direct user to see aircraft's live location and seating 
 
 ## Setup
 
-### server/Project/.env
+### server/.env
 ~~~text
 DOTENV_EMAIL_USERNAME=email@foo.bar
 DOTENV_EMAIL_PASSWORD=foobar
