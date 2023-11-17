@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  distributed-app:
+    container_name: "distributed-app"
+    build:
+      context: ./server/Project/
+      dockerfile: Dockerfile
+    ports:
+      # external:internal
+      - "8000:80"
+    env_file:
+      - ./server/Project/.env
+    environment:
+      - ConnectionStrings:DefaultConnection=Host=distributed-db:5432;Database=flight-app;Username=postgres;Password=postgres
+    depends_on:
+      - distributed-db
+  
+  
+  distributed-db:
+    container_name: "distributed-db"
+    image: "postgres:15.2-bullseye"
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      # external:internal
+      - "5445:5432"
+    volumes:
+      - "distributed-db-postgres-volume:/var/lib/postgresql/data"
+
+volumes:
+  distributed-db-postgres-volume:
