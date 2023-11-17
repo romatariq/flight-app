@@ -1,0 +1,27 @@
+using AutoMapper;
+using Base.DAL;
+using Base.Helpers;
+using Bll = App.Private.DTO.BLL;
+using Dal = App.Private.DTO.DAL;
+namespace App.Mappers.AutoMappers.BLL;
+
+
+public class UserFlightMapper: BaseMapper<Dal.UserFlightInfo, Bll.UserFlightInfo>
+{
+    public UserFlightMapper(IMapper mapper) : base(mapper)
+    {
+    }
+
+    public override Bll.UserFlightInfo? Map(Dal.UserFlightInfo? entity)
+    {
+        if (entity == null) return null;
+        
+        var mapped = base.Map(entity)!;
+        
+        mapped.ScheduledDepartureLocal = entity.ScheduledDepartureUtc
+            .ConvertDateTimeFromUtc((entity.DepartureAirportLatitude, entity.DepartureAirportLongitude));
+        mapped.ScheduledArrivalLocal = entity.ScheduledArrivalUtc
+            .ConvertDateTimeFromUtc((entity.ArrivalAirportLatitude, entity.ArrivalAirportLongitude));
+        return mapped;
+    }
+}

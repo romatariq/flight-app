@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+<!--        this identity 2.2.0 caused problems when migrating-->
+<!--      <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />-->
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.4" />
+        
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="7.0.4" />
+      <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="7.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Base.Domain\Base.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

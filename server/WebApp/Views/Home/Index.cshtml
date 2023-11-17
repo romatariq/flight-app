@@ -1,0 +1,8 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4"><a href="@("swagger/index.html")">Api documentation</a></h1>
+    <h1 class="display-4"><a href="@Environment.GetEnvironmentVariable("DOTENV_FRONTEND_URL")" target="_blank">Front end app</a></h1>
+</div>
