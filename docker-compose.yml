@@ -16,13 +16,13 @@ services:
   distributed-app:
     container_name: "distributed-app"
     build:
-      context: ./server/Project/
+      context: ./server/
       dockerfile: Dockerfile
     ports:
       # external:internal
       - "8000:80"
     env_file:
-      - ./server/Project/.env
+      - ./server/.env
     environment:
       - ConnectionStrings:DefaultConnection=Host=distributed-db:5432;Database=flight-app;Username=postgres;Password=postgres
     depends_on:
