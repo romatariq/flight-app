@@ -218,7 +218,7 @@ void SetupDb(IApplicationBuilder webApp, IWebHostEnvironment appEnvironment, ICo
     if (appConfiguration.GetValue<bool>("InitializeData:SeedData"))
     {
         logger.LogInformation("Seeding initial app data");
-        DbInitializer.InitializeDb(context);
+        DbInitializer.InitializeDb(context, appEnvironment.WebRootPath);
     }
 
 }

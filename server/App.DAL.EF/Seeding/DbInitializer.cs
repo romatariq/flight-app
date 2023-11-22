@@ -13,18 +13,18 @@ public static class DbInitializer
     private static readonly Guid AdminId = Guid.Parse("bc7458ac-cbb0-4ecd-be79-d5abf19f8c77");
     
     
-    public static void InitializeDb(AppDbContext ctx)
+    public static void InitializeDb(AppDbContext ctx, string webRootPath)
     {
         List<Country>? countries = null;
         if (!ctx.Countries.Any())
         {
-            countries = InitializeCountries();
+            countries = InitializeCountries(webRootPath);
             ctx.Countries.AddRange(countries);
         }
         if (!ctx.Airports.Any())
         {
             countries ??= ctx.Countries.ToList();
-            var airports = InitializeAirports(countries);
+            var airports = InitializeAirports(webRootPath, countries);
             ctx.Airports.AddRange(airports);
         }
         if (!ctx.FlightStatuses.Any())
@@ -201,11 +201,10 @@ public static class DbInitializer
         };
     }
 
-    private static List<Country> InitializeCountries()
+    private static List<Country> InitializeCountries(string webRootPath)
     {
-        const string csvUrl = "https://raw.githubusercontent.com/romatariq/flight-app-data/main/countries.csv";
-        var csvString = GetCsvString(csvUrl);
-        using var sr = new StringReader(csvString);
+        var filePath = Path.Combine(webRootPath, "countries.csv");
+        using var sr = new StreamReader(filePath);
         using var parser = new TextFieldParser(sr);
         parser.TextFieldType = FieldType.Delimited;
         parser.SetDelimiters(",");
@@ -229,11 +228,10 @@ public static class DbInitializer
         return countries;
     }
 
-    private static IEnumerable<Airport> InitializeAirports(List<Country> countries)
+    private static IEnumerable<Airport> InitializeAirports(string webRootPath, List<Country> countries)
     {
-        const string csvUrl = "https://raw.githubusercontent.com/romatariq/flight-app-data/main/airports.csv";
-        var csvString = GetCsvString(csvUrl);
-        using var sr = new StringReader(csvString);
+        var filePath = Path.Combine(webRootPath, "airports.csv");
+        using var sr = new StreamReader(filePath);
         using var parser = new TextFieldParser(sr);
         parser.TextFieldType = FieldType.Delimited;
         parser.SetDelimiters(",");
