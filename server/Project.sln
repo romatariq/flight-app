@@ -5,14 +5,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{E1B09701-AEDF-4557-B0F8-3046B3786FA4}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
-		..\.gitignore = ..\.gitignore
+		.gitignore = .gitignore
 		Project.sln.DotSettings = Project.sln.DotSettings
 		TODO.md = TODO.md
 		Dockerfile = Dockerfile
 		.dockerignore = .dockerignore
 		.env = .env
-		..\..\README.md = ..\..\README.md
-		..\..\docker-compose.yml = ..\..\docker-compose.yml
+		..\README.md = ..\README.md
+		..\docker-compose.yml = ..\docker-compose.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Domain", "App.Domain\App.Domain.csproj", "{4D45541E-E2DC-48EA-B522-3879A9D20251}"
