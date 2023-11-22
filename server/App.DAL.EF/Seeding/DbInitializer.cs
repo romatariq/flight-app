@@ -136,14 +136,6 @@ public static class DbInitializer
             new(ClaimTypes.Surname, user.LastName)
         }).Wait();
     }
-
-    private static string GetCsvString(string url)
-    {
-        using var client = new HttpClient();
-        return client
-            .GetStringAsync(url)
-            .Result;
-    }
     
     private static IEnumerable<FlightStatus> InitializeFlightStatuses()
     {
