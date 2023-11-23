@@ -43,23 +43,3 @@ DOTENV_BROWSERLESS_KEY=foobar
 # url must not end with /
 DOTENV_FRONTEND_URL=foobar
 ~~~
-
-### Docker commands
-Can run DB, backend and frontend with docker-compose. When running frontend container, used backend url may not be accurate since it's taken from .env.production and built into code.
-~~~bash
-# build - docker build -t [name:tag] [path]
-docker build -t js-22-23 .
-docker build -t icd0021-22-23-s-distributed-app .
-
-# run - docker run --name [containerName] --rm -it -p [external:internal] [imageName]
-docker run --name js-22-23 --rm -it -p 8001:80 js-22-23
-docker run --name icd0021-22-23-s-distributed-app --rm -it -p 8000:80 icd0021-22-23-s-distributed-app
-
-# tag - docker tag [imageName] [userName/newImageName:tag]
-docker tag js-22-23 romatariq/js-22-23:latest
-docker tag icd0021-22-23-s-distributed-app romatariq/icd0021-22-23-s-distributed-app:latest
-
-# push - docker push [userName/newImageName:tag]
-docker push romatariq/js-22-23:latest
-docker push romatariq/icd0021-22-23-s-distributed-app:latest
-~~~
