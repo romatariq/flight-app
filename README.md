@@ -23,7 +23,7 @@ App uses JWT authentication. There are 2 types of users: admin and user. Admin c
 
 There are some unit and integration tests.
 
-Flight data fetching has 2 implementations: API (preferred but a lot less accurate) and Web scraping (slower and not actually allowed by FR24). In API implementation, data is fetched from [AirLabs](https://airlabs.co/) API and [OpenSky Network](https://opensky-network.org/). In Web scraping implementation, data is scraped with Puppeteer Sharp from [Flightradar24](https://www.flightradar24.com/) and [ADS-B Exchange](https://globe.adsbexchange.com/), using local browser in development and [Browserless](https://www.browserless.io/) in production. Data is stored in DB and updated whenever requested and it's been more than X time from last update.
+Flight data fetching has 2 implementations: API (preferred but a lot less accurate) and Web scraping (slower and **not actually allowed by FR24**). In API implementation, data is fetched from [AirLabs](https://airlabs.co/) API and [OpenSky Network](https://opensky-network.org/). In Web scraping implementation, data is scraped with [Puppeteer Sharp](https://www.puppeteersharp.com/) from [Flightradar24](https://www.flightradar24.com/) and [ADS-B Exchange](https://globe.adsbexchange.com/), using local browser in development and [Browserless](https://www.browserless.io/) in production. Data is stored in DB and updated whenever requested and it's been more than *t* minutes from last update.
 
 
 ### Frontend
