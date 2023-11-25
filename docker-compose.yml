@@ -1,8 +1,8 @@
 version: "3.9"
 
 services:
-  distributed-front-app:
-    container_name: "distributed-front-app"
+  flight-app-client:
+    container_name: "flight-app-client"
     build:
       context: ./client/
       dockerfile: Dockerfile
@@ -10,11 +10,11 @@ services:
       # external:internal
       - "8001:80"
     depends_on:
-      - distributed-app
+      - flight-app-server
 
 
-  distributed-app:
-    container_name: "distributed-app"
+  flight-app-server:
+    container_name: "flight-app-server"
     build:
       context: ./server/
       dockerfile: Dockerfile
@@ -24,13 +24,13 @@ services:
     env_file:
       - ./server/.env
     environment:
-      - ConnectionStrings:DefaultConnection=Host=distributed-db:5432;Database=flight-app;Username=postgres;Password=postgres
+      - ConnectionStrings:DefaultConnection=Host=flight-app-db:5432;Database=flight-app;Username=postgres;Password=postgres
     depends_on:
-      - distributed-db
+      - flight-app-db
   
   
-  distributed-db:
-    container_name: "distributed-db"
+  flight-app-db:
+    container_name: "flight-app-db"
     image: "postgres:15.2-bullseye"
     restart: unless-stopped
     environment:
@@ -44,7 +44,7 @@ services:
       # external:internal
       - "5445:5432"
     volumes:
-      - "distributed-db-postgres-volume:/var/lib/postgresql/data"
+      - "flight-app-db-postgres-volume:/var/lib/postgresql/data"
 
 volumes:
-  distributed-db-postgres-volume:
+  flight-app-db-postgres-volume:
