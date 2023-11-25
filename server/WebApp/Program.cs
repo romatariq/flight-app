@@ -190,9 +190,9 @@ void SetupDb(IApplicationBuilder webApp, IWebHostEnvironment appEnvironment, ICo
     while (!isDbConnectable)
     {
         isDbConnectable = context.Database.CanConnectAsync().Result;
-        if (!isDbConnectable && (DateTime.UtcNow - startedAt).Seconds > 10)
+        if (!isDbConnectable && (DateTime.UtcNow - startedAt).Seconds > 5)
         {
-            throw new ApplicationException("Could not connect to database");
+            break;
         }
     }
     
