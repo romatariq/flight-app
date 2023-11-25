@@ -43,3 +43,6 @@ DOTENV_BROWSERLESS_KEY=foobar
 # url must not end with /
 DOTENV_FRONTEND_URL=foobar
 ~~~
+
+
+#### NB! When using docker-compose, backend url is the one used in production (not localhost)
