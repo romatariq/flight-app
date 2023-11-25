@@ -43,7 +43,7 @@ public class HappyFlowIntegrationTest : IClassFixture<CustomWebAppFactory<Progra
     public async Task MainHappyFlowTest()
     {
         // Arrange
-        const string url = "/";
+        const string url = "/swagger/index.html";
 
         // Act
         var response = await _client.GetAsync(url);
