@@ -40,8 +40,6 @@ DOTENV_EMAIL_USERNAME=email@foo.bar
 DOTENV_EMAIL_PASSWORD=foobar
 DOTENV_AIRLABS_API_KEY=foobar
 DOTENV_BROWSERLESS_KEY=foobar
-# url must not end with /
-DOTENV_FRONTEND_URL=foobar
 ~~~
 
 
